@@ -69,6 +69,7 @@ Example:
     # check if it works
     sudo -uH www-data git push origin
 
+> **Important:** If you add your *private ssh key* to `/var/www/.ssh/id_rsa`, make sure that no web server is running (however, if you have performed the steps in INSTALL.md it's safe to run Nginx). Otherwise you will be exposing your private key. An alternate solution for the reckless mind is to create a dedicated user account.
 
 ## Workflow 3: Live hack
 
