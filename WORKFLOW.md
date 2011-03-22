@@ -12,7 +12,7 @@ This is the recommended workflow as it is robust and every change you make is ba
 
 When developing locally you don't need to have Nginx installed, but simply start your Node.js http server which will handle static files. Very convenient:
 
-    move bin/myapp-httpd.mv
+    bin/myapp-httpd.mv
 
 And your site is accessible at localhost:3000
 
