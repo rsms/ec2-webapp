@@ -4,11 +4,11 @@ This is a template I use to quickly set up Node.js-backed web apps on Amazon EC2
 
 - Less than 15 minutes from start to finish
 - Eligible/compatible with the ["AWS Free Usage Tier"](http://aws.amazon.com/free/)
-- Linux Ubuntu
+- Ubuntu Linux
 - High-performance Nginx HTTP server
-  - Sensible default configuration (three flavor to chose from)
+  - Sensible default configuration (three flavors to chose from)
   - Automatically handles all static file requests
-  - Delegates non-static requests to a local proxy (Node.js web server)
+  - Delegates non-static requests to the Node.js web server
 - Git-based deployment
 - Init.d scripts
 
