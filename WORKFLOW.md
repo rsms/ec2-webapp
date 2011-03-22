@@ -54,7 +54,7 @@ Then, the above example could instead be executed as:
 - Hack directly on the server in the `/var/myapp` git repository
 - Only recommended if you are alone (i.e. no one else is editing)
 
-To get going with this you need to setup the `/var/myapp` git repository for writing (i.e. pushing upstream).
+To get going with this you need to setup the `/var/myapp` git repository for pushing upstream.
 
 1. Add your SSH key to `/var/www/.ssh/id_rsa` (the one which you are using to access your git repository)
 2. Change the repository URI for `/var/myapp` to your read-write URI (i.e. your git@github... URI) with `git remote set-url origin git@github...`
