@@ -19,9 +19,7 @@ And your site is accessible at localhost:3000
 
 ### Examples of using the update script
 
-The update script usage:
-
-    update [restart|noop [<refspec>]]
+The update script usage: `update [restart|noop [<refspec>]]`
 
 Make some changes and push them live, but don't restart services:
 
