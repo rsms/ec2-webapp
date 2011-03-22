@@ -6,7 +6,7 @@ Here we outline three different workflows -- how to hack on and deploy your app.
 
 This is the recommended workflow as it is robust and every change you make is backed up (in your git repository) and can be reverted at any time.
 
-- Work in your own clone of the repository. This can be hosted anywhere, for instance on your computer or the EC2 instance itself.
+- Work in your own, local clone of the repository.
 - Do **not** edit the checked-out repository in `/var/myapp`
 - Use the `update` script to deploy changes (update the server)
 
