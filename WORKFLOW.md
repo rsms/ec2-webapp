@@ -21,7 +21,7 @@ And your site is accessible at localhost:3000
 
 The update script usage:
 
-    update [<refspec> [restart]]
+    update [restart|noop [<refspec>]]
 
 Make some changes and push them live, but don't restart services:
 
@@ -34,11 +34,11 @@ Make some changes and push them live, also restarting services (Node.js server):
 
     cd src/myapp
     git commit ...
-    ssh -i ~/.ssh/myapp.pem ubuntu@myapp.com:/var/myapp/update master restart
+    ssh -i ~/.ssh/myapp.pem ubuntu@myapp.com:/var/myapp/update restart
 
 Revert to an older version on the server:
 
-    ssh -i ~/.ssh/myapp.pem ubuntu@myapp.com:/var/myapp/update v0.1.2 restart
+    ssh -i ~/.ssh/myapp.pem ubuntu@myapp.com:/var/myapp/update restart v0.1.2
 
 > Note: `v0.1.2` in this example is a tag but can be replaced by any git refspec, like a commit hash or branch name.
 
@@ -48,7 +48,7 @@ You can simplify the "update" call by creating an alias in your `~/.bash_rc` (or
 
 Then, the above example could instead be executed as:
 
-    myapp-update v0.1.2 restart
+    myapp-update restart v0.1.2
 
 
 ## Workflow 2: Live hack with git
