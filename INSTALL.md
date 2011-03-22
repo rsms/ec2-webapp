@@ -1,6 +1,6 @@
 # Setup and installation
 
-First of all, make a clone or [fork of this repository](http://help.github.com/fork-a-repo/) and replace all occurrences of `myapp` with a name of your choice. Same goes for `myapp` in this guide.
+First of all, make a clone or [fork of this repository](http://help.github.com/fork-a-repo/) and replace all occurrences of `myapp` with a name of your choice.
 
 ## Launch an EC2 instance
 
