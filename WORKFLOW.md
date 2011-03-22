@@ -7,7 +7,7 @@ Here we outline three different workflows -- how to hack on and deploy your app.
 This is the recommended workflow as it is robust and every change you make is backed up (in your git repository) and can be reverted at any time.
 
 - Work in your own, local clone of the repository.
-- Do **not** edit the checked-out repository in `/var/myapp`
+- No need to log in to or modify files on the server
 - Use the `update` script to deploy changes (update the server)
 
 When developing locally you don't need to have Nginx installed, but simply start your Node.js http server which will handle static files. Very convenient:
