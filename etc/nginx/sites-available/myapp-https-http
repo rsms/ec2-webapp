@@ -1,0 +1,38 @@
+## Supports accessing throught both HTTP and HTTPS
+server {
+  listen                443;
+  listen                [::]:443 default ssl ipv6only=on;
+  ssl                   on;
+  ssl_certificate       /var/myapp/ssl/ssl.crt;
+  ssl_certificate_key   /var/myapp/ssl/ssl.key;
+  ssl_protocols         SSLv3 TLSv1;
+  ssl_ciphers           RC4:ALL:-LOW:-EXPORT:!ADH:!MD5;
+  ssl_prefer_server_ciphers on;
+  ssl_session_cache     shared:SSL:10m;
+  ssl_session_timeout   10m;
+  access_log            /var/log/nginx/access.log;
+  location / {
+    root        /var/myapp/public;
+    index       index.html;
+    error_page  404 = @backend;
+  }
+  location @backend {
+    proxy_pass          http://127.0.0.1:3000;
+    proxy_set_header    X-Client-IP  $remote_addr;
+  }
+}
+
+server {
+  listen        80;
+  listen        [::]:80 default ipv6only=on;
+  access_log    /var/log/nginx/access.log;
+  location / {
+    root        /var/myapp/public;
+    index       index.html;
+    error_page  404 = @backend;
+  }
+  location @backend {
+    proxy_pass          http://127.0.0.1:3000;
+    proxy_set_header    X-Client-IP  $remote_addr;
+  }
+}

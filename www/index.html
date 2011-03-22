@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>myapp</title>
+    <link rel="stylesheet" href="screen.css" type="text/css" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="https://movelang.org/move.js"></script>
+    <script type="text/move">
+$('button').click ^{ $.getJSON '/user/123', ^(data) {
+  $('button').next('pre').text Object.inspect data
+} }
+    </script>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <p>World</p>
+    <button>GET /user/123</button>
+    <pre></pre>
+  </body>
+</html>

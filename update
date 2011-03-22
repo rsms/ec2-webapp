@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Usage: update [restart|noop [<refspec>]]
+#
+# Examples:
+#   update                 # deploy latest
+#   update restart         # deploy latest and restart services
+#   update restart v1.2.3  # deploy ref "v1.2.3" and restart services
+#   update noop v1.2.3     # deploy ref "v1.2.3"
+#
+# If <refspec> is not given, no "git checkout" is performed thus you get the
+# latest version of whatever branch you are currently at.
+#
+if [ "$(whoami)" != "root" ]; then
+  sudo $0 $@
+  exit $?
+fi
+cd "$(dirname "$0")"
+sudo -Hu www-data git pull origin master || exit $?
+if [ "$2" != "" ]; then
+  sudo -Hu www-data git checkout "$2" || exit $?
+fi
+sudo -Hu www-data git submodule update --init
+
+if [ "$1" == "restart" ]; then
+  [ -f /etc/init.d/myapp-httpd ] && invoke-rc.d myapp-httpd restart
+  [ -f /etc/init.d/myapp-processor ] && invoke-rc.d myapp-processor restart
+fi

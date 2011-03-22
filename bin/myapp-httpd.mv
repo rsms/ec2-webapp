@@ -1,0 +1,42 @@
+#!/usr/bin/env move
+require.paths.unshift __dirname+'/../nodelib'
+import connect, connect_json
+
+# URL handler declaration helpers
+a = ^(method) { ^{ leafs.push([method, Array.prototype.slice.call arguments]) }}
+leafs = []; GET = a 'get'; PUT = a 'put'; POST = a 'post'; DELETE = a 'delete'
+# -----------------------------------------------------------------------------
+# URL handlers
+
+# ----- THIS IS A TEMPLATE -- MODIFY OR REPLACE WITH YOUR OWN -----
+
+GET '/user/:id', ^(req, res, next) {
+  # - Query string arguments and POST/PUT-ed JSON can be accessed at req.message
+  # - URL parameters (i.e. ":id" in this example) can be accessed at req.params
+  res.endJSON { name: 'John Doe', id: req.params.id }
+}
+
+# -----------------------------------------------------------------------------
+# Setup and start the server
+parse_url = require('url').parse
+app = connect.router ^(app){
+  leafs.forEach ^(leaf){ app[leaf[0]].apply app, leaf[1] }
+}
+connect()
+  # Parse a URL query-string and put it in req.message
+  .use(^(req, res, next) {
+    req.message = parse_url(req.url, true).query
+    next()
+  })
+  # Enable JSON requests and responses
+  .use(connect_json)
+  # Mount our app at /
+  .use(app)
+  # Try serving a static file for any request not handled by our app
+  .use(^(req, res, next) {
+    if (req.url == '/') req.url = '/index.html'
+    next()
+  })
+  .use(connect['static'] __dirname+'/../www')
+  # Start the server and accept local connections at port 3000
+  .listen 3000, '127.0.0.1'
