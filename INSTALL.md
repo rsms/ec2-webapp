@@ -99,4 +99,4 @@ Replace `myapp-https` below with the configuration of your choice:
 
 Your web app should now be operational.
 
-If everything works, continue by reading [WORKFLOW.md](https://github.com/rsms/ec2-webapp/blob/master/WORKFLOW.md)
+If everything works, continue by reading [WORKFLOW.md](https://github.com/rsms/ec2-webapp/blob/master/WORKFLOW.md#readme)

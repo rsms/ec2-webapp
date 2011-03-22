@@ -19,4 +19,4 @@ This template enables a very smooth, simple and scalable workflow
 - Rolling back the server to an earlier version is a simple as `myapp-update v0.1.2 restart`
 
 
-Let's get started! Head over to [INSTALL.md](https://github.com/rsms/ec2-webapp/blob/master/INSTALL.md)
+Let's get started! Head over to [INSTALL.md](https://github.com/rsms/ec2-webapp/blob/master/INSTALL.md#readme)
