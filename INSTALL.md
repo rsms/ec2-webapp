@@ -42,7 +42,7 @@ Node.js:
 
 NPM:
 
-    sudo echo && curl http://npmjs.org/install.sh | sudo sh
+    sudo true && curl http://npmjs.org/install.sh | sudo sh
     sudo npm install connect connect_json move
 
 
