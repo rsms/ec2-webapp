@@ -18,5 +18,6 @@ This template enables a very smooth, simple and scalable workflow
 - When deploying changes (after a git push), `myapp-update restart` deploys changes and restarts services on your server
 - Rolling back the server to an earlier version is a simple as `myapp-update restart v0.1.2`
 
+> Here's a guide on getting started with Amazon EC2: <http://rsms.me/2011/03/23/ec2-wep-app-template.html>
 
 **Let's get started!** Head over to [INSTALL.md](https://github.com/rsms/ec2-webapp/blob/master/INSTALL.md#readme)
