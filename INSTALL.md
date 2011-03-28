@@ -99,4 +99,6 @@ Replace `myapp-https` below with the configuration of your choice:
 
 Your web app should now be operational.
 
-If everything works, continue by reading [WORKFLOW.md](https://github.com/rsms/ec2-webapp/blob/master/WORKFLOW.md#readme)
+Note that the programs `myapp-httpd` and `myapp-processor` are written in the Move programming language (like JavaScript but simpler). [Learn more at movelang.org](http://movelang.org/).
+
+If everything works, **continue by reading [WORKFLOW.md](https://github.com/rsms/ec2-webapp/blob/master/WORKFLOW.md#readme)**
