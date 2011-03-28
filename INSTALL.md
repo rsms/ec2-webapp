@@ -19,9 +19,9 @@ When the instance is green and "started", log in to the machine:
 
     ssh -i ~/.ssh/myapp.pem ubuntu@XXX.amazonaws.com
 
-*Note: Replace `XXX.amazonaws.com` with the hostname or address of your instance*
+*Note: Replace `XXX.amazonaws.com` with the hostname or address of your instance.*
 
-*Note: SSH isn't built into Windows, <a href="WINDOWS-SSH.md" name="installsoftware">follow the guide</a>*
+*Note: If you are running Microsoft Windows, which lacks an SSH client, see [WINDOWS-SSH.md](WINDOWS-SSH.md#readme).
 
 ## Install software
 
