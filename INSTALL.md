@@ -21,6 +21,7 @@ When the instance is green and "started", log in to the machine:
 
 *Note: Replace `XXX.amazonaws.com` with the hostname or address of your instance*
 
+*Note: SSH isn't built into Windows, [follow the guide](WINDOWS-SSH.md)*
 
 ## Install software
 
