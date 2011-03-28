@@ -23,7 +23,7 @@ When the instance is green and "started", log in to the machine:
 
 *Note: SSH isn't built into Windows, [follow the guide](WINDOWS-SSH.md)*
 
-## Install software
+<h2 id="installsoftware">Install software</h2>
 
     sudo apt-get update
     sudo apt-get install nginx git-core daemon

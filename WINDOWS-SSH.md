@@ -15,3 +15,5 @@ Under sessions enter your public DNS of your instance you just created, prefix t
 In the same window go to `Connection > SSH > Auth`. Click browse for Private key file for authentication file input and select your newly generated `.ppk` file.
 
 To avoid repeating these steps you can save your session details for easier connecting. Jump back to `Sessions` and enter a name under `Saved Sessions` and click `Save`. Now all you do is double click you saved session to connect.
+
+Head back to the [install instructions](INSTALL.md#installsoftware) to continue your setup.
