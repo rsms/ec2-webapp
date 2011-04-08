@@ -4,7 +4,7 @@ server {
   listen        [::]:80 default ipv6only=on;
   access_log    /var/log/nginx/access.log;
   location / {
-    root        /var/myapp/public;
+    root        /var/myapp/www;
     index       index.html;
     error_page  404 = @backend;
   }
