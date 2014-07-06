@@ -25,24 +25,26 @@ Make some changes and push them live, but don't restart services:
 
     cd src/myapp
     git commit ...
-    ssh -i ~/.ssh/myapp.pem ubuntu@myapp.com:/var/myapp/update
+    git push origin master
+    ssh -i ~/.ssh/myapp.pem ubuntu@myapp.com '/var/myapp/update'
     # some status output here
 
 Make some changes and push them live, also restarting services (Node.js server):
 
     cd src/myapp
     git commit ...
-    ssh -i ~/.ssh/myapp.pem ubuntu@myapp.com:/var/myapp/update restart
+    git push origin master
+    ssh -i ~/.ssh/myapp.pem ubuntu@myapp '/var/myapp/update restart' 
 
 Revert to an older version on the server:
 
-    ssh -i ~/.ssh/myapp.pem ubuntu@myapp.com:/var/myapp/update restart v0.1.2
+    ssh -i ~/.ssh/myapp.pem ubuntu@myapp.com '/var/myapp/update restart v0.1.2'
 
 > Note: `v0.1.2` in this example is a tag but can be replaced by any git refspec, like a commit hash or branch name.
 
 You can simplify the "update" call by creating an alias in your `~/.bash_rc` (or other shell startup file):
 
-    alias myapp-update='ssh -i ~/.ssh/myapp.pem ubuntu@myapp.com:/var/myapp/update'
+    alias myapp-update="ssh -i ~/.ssh/myapp.pem ubuntu@myapp.com '/var/myapp/update'"
 
 Then, the above example could instead be executed as:
 
